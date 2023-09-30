@@ -59,8 +59,8 @@ const Set =
 
     const { addOperation, log } = database;
 
-    const put = async (value: unknown): Promise<string> => {
-      return addOperation({ op: "PUT", key: null, value });
+    const add = async (value: unknown): Promise<string> => {
+      return addOperation({ op: "ADD", key: null, value });
     };
 
     const del = async (value: unknown): Promise<string> => {
@@ -83,7 +83,7 @@ const Set =
         const { op, value } = entry.payload;
         const key = JSON.stringify(value);
 
-        if (op === "PUT" && !vals[key]) {
+        if (op === "ADD" && !vals[key]) {
           vals[key] = true;
           count++;
           const hash = entry.hash;
@@ -113,8 +113,7 @@ const Set =
     return {
       ...database,
       type,
-      put,
-      set: put, // Alias for put()
+      add,
       del,
       iterator,
       all,
