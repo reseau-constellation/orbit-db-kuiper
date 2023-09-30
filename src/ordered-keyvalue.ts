@@ -83,11 +83,11 @@ const OrderedKeyValue =
 
     const get = async (
       key: string,
-    ): Promise<{ value: unknown; position: number } | undefined> => {
+    ): Promise<{ value: unknown; position?: number } | undefined> => {
       for await (const entry of log.traverse()) {
         const { op, key: k, value } = entry.payload;
         if (op === "PUT" && k === key) {
-          return value as { value: unknown; position: number };
+          return value as { value: unknown; position?: number };
         } else if (op === "DEL" && k === key) {
           return undefined;
         }
@@ -118,7 +118,6 @@ const OrderedKeyValue =
         if (op === "PUT" && !keys[key]) {
           keys[key] = true;
           const putValue = value as { value: unknown; position?: number };
-          count++;
 
           const hash = entry.hash;
 
@@ -127,8 +126,10 @@ const OrderedKeyValue =
               ? positions[key]
               : putValue.position !== undefined
               ? putValue.position
-              : count;
+              : 0;
           positions[key] = position;
+
+          count++;
           yield { key, value: putValue.value, position, hash };
         } else if (op === "MOVE" && !keys[key]) {
           positions[key] = value as number;
@@ -142,12 +143,25 @@ const OrderedKeyValue =
     };
 
     const all = async () => {
-      const values: { key: string; value: unknown; hash: string }[] = [];
+      const values: {
+        key: string;
+        value: unknown;
+        hash: string;
+        position: number;
+      }[] = [];
       for await (const entry of iterator()) {
-        const { position, key, value, hash } = entry;
-        values.splice(position, 0, { key, value, hash });
+        values.unshift(entry);
       }
-      return values;
+
+      return values
+        .sort((a, b) =>
+          a.position > b.position ? 1 : a.position === b.position ? 0 : -1,
+        )
+        .map((x) => ({
+          key: x.key,
+          value: x.value,
+          hash: x.hash,
+        }));
     };
 
     return {
