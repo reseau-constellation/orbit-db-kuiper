@@ -66,7 +66,11 @@ const OrderedKeyValue =
       value: unknown,
       position?: number,
     ): Promise<string> => {
-      return addOperation({ op: "PUT", key, value: { value, position } });
+      const entryValue: { value: unknown; position?: number } = { value };
+      if (position !== undefined) {
+        entryValue.position = position;
+      }
+      return addOperation({ op: "PUT", key, value: entryValue });
     };
 
     const move = async (key: string, position: number): Promise<string> => {
@@ -111,21 +115,20 @@ const OrderedKeyValue =
         const { op, key, value } = entry.payload;
         if (!key) return;
 
-        // Le nombre de données
-        let n = 0;
-
         if (op === "PUT" && !keys[key]) {
           keys[key] = true;
           const putValue = value as { value: unknown; position?: number };
           count++;
-          n++;
+
           const hash = entry.hash;
+
           const position =
             positions[key] !== undefined
               ? positions[key]
               : putValue.position !== undefined
               ? putValue.position
-              : n;
+              : count;
+          positions[key] = position;
           yield { key, value: putValue.value, position, hash };
         } else if (op === "MOVE" && !keys[key]) {
           positions[key] = value as number;
