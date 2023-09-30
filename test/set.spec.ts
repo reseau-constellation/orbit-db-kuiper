@@ -1,7 +1,6 @@
 import { deepStrictEqual, strictEqual, notStrictEqual } from "assert";
 import * as IPFS from "ipfs-core";
 import { rimraf } from "rimraf";
-import { copy } from "fs-extra";
 
 import Set, { SetDatabaseType } from "@/set.js";
 import config from "./config.js";
@@ -10,7 +9,6 @@ import { expect } from "aegir/chai";
 import { DBElements } from "@/types.js";
 
 const keysPath = "./testkeys";
-const testKeysPath = "./test/fixtures/newtestkeys2";
 
 describe("Set Database", () => {
   let ipfs: IPFS.IPFS;
@@ -24,7 +22,6 @@ describe("Set Database", () => {
   before(async () => {
     ipfs = await IPFS.create({ ...config.daemon1, repo: "./ipfs1" });
 
-    await copy(testKeysPath, keysPath);
     keystore = await KeyStore({ path: keysPath });
     identities = await Identities({ keystore });
     testIdentity1 = await identities.createIdentity({ id: "userA" });
