@@ -1,6 +1,9 @@
 # Kuiper
 Additional database types for orbit-db.
 
+[![Orbit-db Kuiper tests](https://github.com/reseau-constellation/orbit-db-kuiper/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/reseau-constellation/orbit-db-kuiper/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/reseau-constellation/orbit-db-kuiper/graph/badge.svg?token=7OZK4BJDej)](https://codecov.io/gh/reseau-constellation/orbit-db-kuiper)
+
 ## Installation
 ```
 $ pnpm add @constl/orbit-db-kuiper
