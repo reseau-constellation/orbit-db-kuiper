@@ -2,12 +2,11 @@
 .DS_Store
 node_modules
 /dist
-/coverage
+/.coverage
 /node_modules
 /.nyc_output
 /.vscode
 /_stockageTemp
-/src/utilsTests/_tempo
 
 .yarn/*
 !.yarn/cache
