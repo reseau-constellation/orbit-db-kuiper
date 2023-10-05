@@ -17,12 +17,12 @@ jobs:
           node-version: 16
 
       - name: Installer pnpm
-        uses: pnpm/action-setup@v2.2.4
+        uses: pnpm/action-setup@v2.4.0
         with:
           version: latest
 
       - name: Ouvrir la branche
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Nétoyer les dépendances d'installation
         run: pnpm install --lockfile=false
