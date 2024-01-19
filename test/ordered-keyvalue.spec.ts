@@ -1,11 +1,11 @@
 import { deepStrictEqual, strictEqual, notStrictEqual } from "assert";
-import * as IPFS from "ipfs-core";
+import { type Helia } from "helia";
 import { rimraf } from "rimraf";
 
 import OrderedKeyValue, {
   OrderedKeyValueDatabaseType,
 } from "@/ordered-keyvalue.js";
-import config from "./config.js";
+import { createTestHelia } from "./config.js";
 import { Identities, Identity, KeyStore, KeyStoreType } from "@orbitdb/core";
 import { expect } from "aegir/chai";
 import { DBElements } from "@/types.js";
@@ -13,7 +13,7 @@ import { DBElements } from "@/types.js";
 const keysPath = "./testkeys";
 
 describe("OrderedKeyValue Database", () => {
-  let ipfs: IPFS.IPFS;
+  let ipfs: Helia;
   let identities;
   let keystore: KeyStoreType;
   let testIdentity1: Identity;
@@ -22,7 +22,7 @@ describe("OrderedKeyValue Database", () => {
   const databaseId = "ordered-keyvalue-AAA";
 
   before(async () => {
-    ipfs = await IPFS.create({ ...config.daemon1, repo: "./ipfs1" });
+    ipfs = await createTestHelia({ directory: "./ipfsOKV" });
 
     keystore = await KeyStore({ path: keysPath });
     identities = await Identities({ keystore });
@@ -40,7 +40,7 @@ describe("OrderedKeyValue Database", () => {
 
     await rimraf(keysPath);
     await rimraf("./orbitdb");
-    await rimraf("./ipfs1");
+    await rimraf("./ipfsOKV");
   });
 
   describe("Creating an Ordered KeyValue database", () => {

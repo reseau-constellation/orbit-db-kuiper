@@ -4,7 +4,7 @@ import {
   type Identity,
   type Storage,
 } from "@orbitdb/core";
-import type { IPFS } from "ipfs-core";
+import type { Helia } from "helia";
 
 export type OrderedKeyValueDatabaseType = Awaited<
   ReturnType<ReturnType<typeof OrderedKeyValue>>
@@ -29,7 +29,7 @@ const OrderedKeyValue =
     syncAutomatically,
     onUpdate,
   }: {
-    ipfs: IPFS;
+    ipfs: Helia;
     identity?: Identity;
     address: string;
     name?: string;
@@ -125,8 +125,8 @@ const OrderedKeyValue =
             positions[key] !== undefined
               ? positions[key]
               : putValue.position !== undefined
-              ? putValue.position
-              : 0;
+                ? putValue.position
+                : 0;
           positions[key] = position;
 
           count++;

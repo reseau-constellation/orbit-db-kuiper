@@ -1,9 +1,9 @@
 import { deepStrictEqual, strictEqual, notStrictEqual } from "assert";
-import * as IPFS from "ipfs-core";
+import { type Helia } from "helia";
 import { rimraf } from "rimraf";
 
 import Feed, { FeedDatabaseType } from "@/feed.js";
-import config from "./config.js";
+import { createTestHelia } from "./config.js";
 import { Identities, Identity, KeyStore, KeyStoreType } from "@orbitdb/core";
 import { expect } from "aegir/chai";
 import { DBElements } from "@/types.js";
@@ -11,7 +11,7 @@ import { DBElements } from "@/types.js";
 const keysPath = "./testkeys";
 
 describe("Feed Database", () => {
-  let ipfs: IPFS.IPFS;
+  let ipfs: Helia;
   let identities;
   let keystore: KeyStoreType;
   let testIdentity1: Identity;
@@ -20,7 +20,7 @@ describe("Feed Database", () => {
   const databaseId = "feed-AAA";
 
   before(async () => {
-    ipfs = await IPFS.create({ ...config.daemon1, repo: "./ipfs1" });
+    ipfs = await createTestHelia({ directory: "./ipfs1" });
 
     keystore = await KeyStore({ path: keysPath });
     identities = await Identities({ keystore });

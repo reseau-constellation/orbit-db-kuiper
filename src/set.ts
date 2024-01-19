@@ -4,7 +4,7 @@ import {
   type Storage,
   type AccessController,
 } from "@orbitdb/core";
-import type { IPFS } from "ipfs-core";
+import type { Helia } from "helia";
 
 export type SetDatabaseType = Awaited<ReturnType<ReturnType<typeof Set>>>;
 
@@ -27,7 +27,7 @@ const Set =
     syncAutomatically,
     onUpdate,
   }: {
-    ipfs: IPFS;
+    ipfs: Helia;
     identity?: Identity;
     address: string;
     name?: string;
