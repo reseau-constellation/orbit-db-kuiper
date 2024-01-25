@@ -1,6 +1,6 @@
 {
   "name": "@constl/orbit-db-kuiper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Further database types for orbit-db.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
