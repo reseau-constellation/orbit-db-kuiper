@@ -4,6 +4,9 @@ Additional database types for orbit-db.
 [![Orbit-db Kuiper tests](https://github.com/reseau-constellation/orbit-db-kuiper/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/reseau-constellation/orbit-db-kuiper/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/reseau-constellation/orbit-db-kuiper/graph/badge.svg?token=7OZK4BJDej)](https://codecov.io/gh/reseau-constellation/orbit-db-kuiper)
 
+## Deprecation notice
+This package is deprecated in favour of the individual packages [@orbitdb/feed-db](https://www.npmjs.com/package/@orbitdb/feed-db), [@orbitdb/set-db](https://www.npmjs.com/package/@orbitdb/set-db) and [@orbitdb/ordered-keyvalue-db](https://www.npmjs.com/package/@orbitdb/ordered-keyvalue-db).
+
 ## Installation
 ```
 $ pnpm add @constl/orbit-db-kuiper
