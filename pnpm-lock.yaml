@@ -45,7 +45,7 @@ devDependencies:
     version: 1.0.14
   '@libp2p/webrtc':
     specifier: ^4.0.16
-    version: 4.0.16(react-native@0.73.4)
+    version: 4.0.19(react-native@0.73.4)
   '@libp2p/websockets':
     specifier: ^8.0.12
     version: 8.0.12
@@ -1711,7 +1711,7 @@ packages:
       '@chainsafe/as-sha256': 0.4.1
       '@libp2p/crypto': 3.0.4
       '@libp2p/interface': 1.1.2
-      '@libp2p/peer-id': 4.0.5
+      '@libp2p/peer-id': 4.0.6
       '@noble/ciphers': 0.4.1
       '@noble/curves': 1.3.0
       '@noble/hashes': 1.3.3
@@ -1721,7 +1721,7 @@ packages:
       it-pair: 2.0.6
       it-pipe: 3.0.1
       it-stream-types: 2.0.1
-      protons-runtime: 5.2.2
+      protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
       wherearewe: 2.0.1
@@ -1751,7 +1751,6 @@ packages:
       wherearewe: 2.0.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@chainsafe/libp2p-yamux@6.0.2:
     resolution: {integrity: sha512-S5OkLHqYhEVMQQ4BTgnRANEIbGTQhaC23glCgBwGdeoTRtMpIozwDiPfljFLCm0RYWdCRJw9oFztO95KUHjptA==}
@@ -2342,6 +2341,8 @@ packages:
       interface-store: 5.1.8
       multiformats: 13.1.0
       progress-events: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@humanwhocodes/config-array@0.11.14:
@@ -2605,6 +2606,8 @@ packages:
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/crypto@4.0.1:
     resolution: {integrity: sha512-lKGbX8TvQt4JbqlttdexEz2VtYJnTwY31kVBDQviwt0pMF+6Uy2hzNnEQ1FHZBwnow8BIlyb6UevHfgyOFlnkw==}
@@ -2627,10 +2630,12 @@ packages:
       '@noble/curves': 1.3.0
       '@noble/hashes': 1.3.3
       asn1js: 3.0.5
-      multiformats: 13.1.0
+      multiformats: 13.0.1
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
-      uint8arrays: 5.0.2
+      uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/dcutr@1.0.9:
     resolution: {integrity: sha512-EJmlMUThkkt8yosEYzlBHaKvrVNMiYCye1mN9Lirm0urc3Omb7KfZqca5tl5NMsldGCeBHWqo/eNb0tqlr792g==}
@@ -2863,6 +2868,8 @@ packages:
     dependencies:
       '@libp2p/interface': 1.1.3
       '@libp2p/peer-id': 4.0.6
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/peer-id-factory@4.0.5:
     resolution: {integrity: sha512-9fy1TCiBViqIFuoFzW/o9fVh3j600IYDHaXUqvx6HQFeB/dEM8utRU4FxVZVv/MMcKfUf7mydHXVHRyp28uG8w==}
@@ -2900,6 +2907,8 @@ packages:
       '@libp2p/interface': 1.1.3
       multiformats: 13.1.0
       uint8arrays: 5.0.2
+    transitivePeerDependencies:
+      - supports-color
 
   /@libp2p/peer-record@7.0.9:
     resolution: {integrity: sha512-uI5kE8K6/CWamxV9NK1p7mdYoWIf1AP+eWWZd+1opa/R7zT/QYmtAc/wWE7uFhfRsB736u9GkiPwU66LzA0reQ==}
@@ -3053,33 +3062,33 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@libp2p/webrtc@4.0.16(react-native@0.73.4):
-    resolution: {integrity: sha512-bhHLDrHID7l7jpgY74M1455BdkkajsRuzO/QhycCpvH9aEKnbbNFBfqVfdobsg9kba5Gq9M779hWLbsrDkhCPw==}
+  /@libp2p/webrtc@4.0.19(react-native@0.73.4):
+    resolution: {integrity: sha512-SeEvCkF2nExh5kTvzY8DzEAyeKP6F5oespBn8sfFFMJ0GEtrUxFgrFrT06suVFhkPSKIZ91wbiHxhV1JGO7t0Q==}
     dependencies:
-      '@chainsafe/libp2p-noise': 14.1.0
-      '@libp2p/interface': 1.1.2
-      '@libp2p/interface-internal': 1.0.7
-      '@libp2p/peer-id': 4.0.5
-      '@libp2p/utils': 5.2.2
+      '@chainsafe/libp2p-noise': 15.0.0
+      '@libp2p/interface': 1.1.3
+      '@libp2p/interface-internal': 1.0.8
+      '@libp2p/peer-id': 4.0.6
+      '@libp2p/utils': 5.2.5
       '@multiformats/mafmt': 12.1.6
-      '@multiformats/multiaddr': 12.1.12
+      '@multiformats/multiaddr': 12.1.14
       '@multiformats/multiaddr-matcher': 1.1.2
       detect-browser: 5.3.0
       it-length-prefixed: 9.0.4
       it-protobuf-stream: 1.1.2
       it-pushable: 3.2.3
       it-stream-types: 2.0.1
-      multiformats: 13.0.1
+      multiformats: 13.1.0
       multihashes: 4.0.3
       node-datachannel: 0.5.3
       p-defer: 4.0.0
       p-event: 6.0.0
       p-timeout: 6.1.2
-      protons-runtime: 5.2.2
+      protons-runtime: 5.4.0
       race-signal: 1.0.2
-      react-native-webrtc: 118.0.0(react-native@0.73.4)
+      react-native-webrtc: 118.0.1(react-native@0.73.4)
       uint8arraylist: 2.4.8
-      uint8arrays: 5.0.1
+      uint8arrays: 5.0.2
     transitivePeerDependencies:
       - react-native
       - supports-color
@@ -3313,6 +3322,8 @@ packages:
       p-queue: 8.0.1
       timeout-abort-controller: 3.0.0
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@phenomnomnominal/tsquery@5.0.1(typescript@5.3.3):
@@ -8098,7 +8109,7 @@ packages:
       '@libp2p/tcp': 9.0.12
       '@libp2p/upnp-nat': 1.0.10
       '@libp2p/utils': 5.2.2
-      '@libp2p/webrtc': 4.0.16(react-native@0.73.4)
+      '@libp2p/webrtc': 4.0.19(react-native@0.73.4)
       '@libp2p/websockets': 8.0.12
       '@libp2p/webtransport': 4.0.16
       blockstore-core: 4.3.10
@@ -8177,7 +8188,7 @@ packages:
     resolution: {integrity: sha512-+K84LB1DYwMHoHSgaOY/Jfhw3ucPmSET5v98Ke/HdNSw4a0UktWzyW1mjhjpuxxTqOOsfWT/7iVshHmVZ4IpOA==}
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
-      lru-cache: 10.1.0
+      lru-cache: 10.2.0
     dev: true
 
   /html-escaper@2.0.2:
@@ -9632,8 +9643,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /lru-cache@10.1.0:
-    resolution: {integrity: sha512-/1clY/ui8CzjKFyjdvwPWJUYKiFVXG2I2cY0ssG7h4+hwk+XOIX7ZSG9Q7TW8TW3Kp3BUSqgFWBLgL4PJ+Blag==}
+  /lru-cache@10.2.0:
+    resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
     engines: {node: 14 || >=16.14}
     dev: true
 
@@ -10787,11 +10798,11 @@ packages:
     resolution: {integrity: sha512-WDD0bdg9mbq6F4mRxEYcPWwfA1vxd0mrvKOyxI7Xj/atfRHVeutzuWByG//jfm4uPzp0y4Kj051EORCBSQMycw==}
     engines: {node: '>=12.0.0'}
 
-  /node-abi@3.54.0:
-    resolution: {integrity: sha512-p7eGEiQil0YUV3ItH4/tBb781L5impVmmx2E9FRKF7d18XXzp4PGT2tdYMFY6wQqgxD0IwNZOiSJ0/K0fSi/OA==}
+  /node-abi@3.56.0:
+    resolution: {integrity: sha512-fZjdhDOeRcaS+rcpve7XuwHBmktS1nS1gzgghwKUQQ8nTy2FdSDr6ZT8k6YhvlJeHmmQMYiT/IH9hfco5zeW2Q==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.4
+      semver: 7.6.0
 
   /node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
@@ -11568,7 +11579,7 @@ packages:
     resolution: {integrity: sha512-MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: 10.1.0
+      lru-cache: 10.2.0
       minipass: 7.0.4
     dev: true
 
@@ -11757,7 +11768,7 @@ packages:
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 1.0.2
-      node-abi: 3.54.0
+      node-abi: 3.56.0
       pump: 3.0.0
       rc: 1.2.8
       simple-get: 4.0.1
@@ -12046,8 +12057,8 @@ packages:
       - supports-color
     dev: true
 
-  /react-native-webrtc@118.0.0(react-native@0.73.4):
-    resolution: {integrity: sha512-gYP/0oeoPkaqrq3hYY5I3Cv49fqKGOhXh2A0/WTZMo3Hl/w+qvFAWOCXI0uUcwSA/bmkuzIStGycmW72QU4+tw==}
+  /react-native-webrtc@118.0.1(react-native@0.73.4):
+    resolution: {integrity: sha512-gjbBIV/0VyplavbOsQw9mpVJ4WHTEYZzi4PN7Oz18p2Ucsc5yEVUhtN5NQep8w6VDH1DNzuXXBPq5uJq9uqbMA==}
     peerDependencies:
       react-native: '>=0.60.0'
     dependencies:
@@ -12617,6 +12628,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
@@ -13696,7 +13708,7 @@ packages:
     resolution: {integrity: sha512-FwpTa7ZGA/f/EssWAb5/YV6pHgVF1fViKdW8cWaEarjB8t7NyofSWBdOTyFPaGuUG4gx3v1O3PQ8etsiOs3lcw==}
     dependencies:
       uint8arraylist: 2.4.8
-      uint8arrays: 5.0.2
+      uint8arrays: 5.0.1
 
   /uint8arraylist@2.4.8:
     resolution: {integrity: sha512-vc1PlGOzglLF0eae1M8mLRTBivsvrGsdmJ5RbK3e+QRvRLOZfZhQROTwH/OfyF3+ZVUg9/8hE8bmKP2CvP9quQ==}
