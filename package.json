@@ -25,7 +25,7 @@
   "dependencies": {
     "@orbitdb/core": "^2.0.1",
     "events": "^3.3.0",
-    "helia": "^3.0.1",
+    "helia": "^4.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
